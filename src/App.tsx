@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import { APP_CONFIG } from './config.provider';
 
-function App() {
+interface AppProps {}
+
+const App: React.FunctionComponent<AppProps> = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className='App'>
+        <h3>Current Configuration: {APP_CONFIG.configuration}</h3>
+        <hr />
+        <p>Base Url: {APP_CONFIG.baseUrl}</p>
+      </div>
+    </>
   );
-}
+};
 
 export default App;
